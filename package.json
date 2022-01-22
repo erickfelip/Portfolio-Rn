@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@gorhom/bottom-sheet": "4",
     "expo": "~44.0.2",
     "expo-speech": "~10.1.0",
     "expo-splash-screen": "~0.14.1",
@@ -16,6 +17,9 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
+    "react-native-gesture-handler": "~2.1.0",
+    "react-native-reanimated": "~2.3.1",
+    "react-native-responsive-fontsize": "^0.5.1",
     "react-native-web": "0.17.1",
     "styled-components": "^5.3.3"
   },

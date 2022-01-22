@@ -1,29 +1,64 @@
 import React, {useState} from "react";
-import { Box, Container } from "./style";
-import { TextInput, Text, Button } from "react-native";
-import * as Speech from 'expo-speech';
+import { SafeAreaView, View, Text, ScrollView, Animated} from "react-native";
+import { Header, Container, Photo } from "./style";
 
-export default function Home() {
- const [ text, setText] = useState('Mundo bate novo recorde diário com 3,79 milhões de casos de Covid')
-
- function speak(){
-     Speech.speak(text,{
-         language: 'pt-BR'
-     })
- }
-
+export default function App() {
+  const [scrollY, setScrollY] = useState(new Animated.Value(0))
   return (
     <Container>
-      <Box>
-          <TextInput 
-          onChangeText={e => setText (e)}
-          placeholder=" Digite algo..."></TextInput>
-        <Button 
-        title="Falar"
-        onPress={speak}
-        > 
-        </Button>
-      </Box>
+      <Header
+      style={{height: scrollY.interpolate({
+        inputRange:[10, 160, 185],
+        outputRange:[140, 30, 0],
+        extrapolate: 'clamp'
+      }),
+        opacity: scrollY.interpolate({
+          inputRange: [1, 75, 170],
+          outputRange: [1, 1, 0],
+          extrapolate: 'clamp'
+        })
+      }}
+      >
+        <Photo
+          style={{
+            width: scrollY.interpolate({
+              inputRange: [0, 120],
+              outputRange: [120, 120],
+              extrapolate: 'clamp'
+            }),
+          }}
+          source={{
+            uri: "https://avatars.githubusercontent.com/u/68874188?v=4",
+          }}
+          />
+      </Header>
+      <ScrollView
+      scrollEventThrottle={16}
+      onScroll={Animated.event([{
+        nativeEvent: {
+          contentOffset: { y: scrollY}
+        },
+      }],
+      { useNativeDriver: false })}
+      >
+          <Text
+          style={{fontSize: 200}}
+          >
+          👋 Hi, I’m @erickfelip
+
+          👨‍💻 I’m currently learning javascript + react/react native.
+
+          🤝 I’m looking to collaborate on front-end area.
+          </Text> 
+            <Text>
+          👋 Hi, I’m @erickfelip
+
+          👨‍💻 I’m currently learning javascript + react/react native.
+
+          🤝 I’m looking to collaborate on front-end area.
+          </Text>
+          </ScrollView>
     </Container>
+
   );
 }

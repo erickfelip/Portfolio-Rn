@@ -1,18 +1,23 @@
 import styled from "styled-components";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { Platform, Animated } from "react-native";
 
 export const Container = styled.View`
-  background-color: black;
-  width: auto;
   flex: 1;
-  align-items: center;
-  justify-content: center;
+  background-color: grey;
 `;
 
-export const Box = styled.View`
-  background-color: whitesmoke;
-  border-radius: 10px;
-  width: 300px;
-  height: 150px;
-  align-items: center;
+export const Header = styled(Animated.View)`
+ align-items: center;
   justify-content: center;
+  padding-top: ${Platform.OS === "android" ? 60 : 120}px;
+  background-color: grey;
+  width: 100%;
+  height: ${RFPercentage(20)}px;
+`;
+
+export const Photo = styled(Animated.Image)`
+  width: ${RFValue(100)}px;
+  height: ${RFValue(100)}px;
+  border-radius: 90px;
 `;
