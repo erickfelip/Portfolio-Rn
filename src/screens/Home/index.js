@@ -18,9 +18,8 @@ import {
   FontAwesome5,
 } from "@expo/vector-icons";
 import { Linking } from "react-native";
-import { Modalize } from "react-native-modalize";
 
-export default function App() {
+export default function Home({navigation}) {
   const [scrollY, setScrollY] = useState(new Animated.Value(0));
 
   return (
@@ -91,11 +90,7 @@ export default function App() {
 
           <Projects style={{ shadowColor: "white", elevation: 9 }}>
             <TouchableOpacity
-              onPress={() =>
-                Linking.openURL(
-                  "https://github.com/erickfelip?tab=repositories"
-                )
-              }
+              onPress={() => navigation.navigate('Projects')}
             >
               <Text>Projetos</Text>
             </TouchableOpacity>
