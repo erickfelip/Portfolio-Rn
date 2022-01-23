@@ -1,12 +1,28 @@
-import React, { useState } from "react";
-import { ScrollView, Animated } from "react-native";
-import { Header, Container, Photo, Cards, Text, Skills, Bio, Projects } from "./style";
+import React, { useState, useRef } from "react";
+import { ScrollView, Animated, TouchableOpacity } from "react-native";
+import {
+  Header,
+  Container,
+  Photo,
+  Cards,
+  Text,
+  Skills,
+  Bio,
+  Projects,
+} from "./style";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { AntDesign, FontAwesome, Ionicons, FontAwesome5 } from "@expo/vector-icons";
+import {
+  AntDesign,
+  FontAwesome,
+  Ionicons,
+  FontAwesome5,
+} from "@expo/vector-icons";
 import { Linking } from "react-native";
+import { Modalize } from "react-native-modalize";
 
 export default function App() {
   const [scrollY, setScrollY] = useState(new Animated.Value(0));
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Container>
@@ -52,30 +68,41 @@ export default function App() {
           )}
         >
           <Bio style={{ shadowColor: "white", elevation: 8 }}>
-          <AntDesign 
-          style={{alignContent:'center', justifyContent:'center'}}
-          name="user" size={20} color="black" />
-          <Text>
-             Olá, meu nome é Erick Felipe, tenho 21 anos, sou graduando em ciências e tecnologia e desenvolvedor front-end, atualmente desenvolvo aplicações web e mobile com react e react native.
-          </Text>
+            <AntDesign
+              style={{ alignContent: "center", justifyContent: "center" }}
+              name="user"
+              size={20}
+              color="black"
+            />
+            <Text>
+              Olá, meu nome é Erick Felipe, tenho 21 anos, sou graduando em
+              ciências e tecnologia e desenvolvedor front-end, atualmente
+              desenvolvo aplicações web e mobile com react e react native.
+            </Text>
           </Bio>
           <Skills style={{ shadowColor: "white", elevation: 9 }}>
-          <Text>
-           Skills
-          </Text>
-          <AntDesign name="HTML" size={30} color="black" />
-          <FontAwesome name="css3" size={30} color="black" />
-          <Ionicons name="logo-javascript" size={30} color="black" />
-          <FontAwesome5 name="react" size={30} color="black" />
-          <FontAwesome name="git" size={30} color="black" />
+            <Text>Skills</Text>
+            <AntDesign name="HTML" size={30} color="black" />
+            <FontAwesome name="css3" size={30} color="black" />
+            <Ionicons name="logo-javascript" size={30} color="black" />
+            <FontAwesome5 name="react" size={30} color="black" />
+            <FontAwesome name="git" size={30} color="black" />
           </Skills>
+
           <Projects style={{ shadowColor: "white", elevation: 9 }}>
-          <Text>
-          Projects
-          </Text>
+            <TouchableOpacity
+              onPress={() =>
+                Linking.openURL(
+                  "https://github.com/erickfelip?tab=repositories"
+                )
+              }
+            >
+              <Text>Projetos</Text>
+            </TouchableOpacity>
           </Projects>
+
           <Cards style={{ shadowColor: "white", elevation: 9 }}>
-            <Text>Contact Me</Text>
+            <Text>Contato</Text>
             <FontAwesome
               onPress={() => Linking.openURL("https://t.me/Erickfelipe44")}
               name="telegram"
