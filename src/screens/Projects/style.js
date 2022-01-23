@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 export const CardsProject = styled.View`
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.secondary};
   width: ${RFValue(300)}px;
@@ -21,7 +21,13 @@ export const CardsProject = styled.View`
 `;
 
 export const Text = styled.Text`
-color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.secondary};
   font-family: ${({ theme }) => theme.fonts.light};
   font-size: 20px;
-`
+`;
+
+export const TextCards = styled.Text`
+  color: ${({ theme }) => theme.colors.black};
+  font-family: ${({ theme }) => theme.fonts.light};
+  font-size: 20px;
+`;

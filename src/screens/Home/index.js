@@ -19,7 +19,7 @@ import {
 } from "@expo/vector-icons";
 import { Linking } from "react-native";
 
-export default function Home({navigation}) {
+export default function Home({ navigation }) {
   const [scrollY, setScrollY] = useState(new Animated.Value(0));
 
   return (
@@ -89,9 +89,7 @@ export default function Home({navigation}) {
           </Skills>
 
           <Projects style={{ shadowColor: "white", elevation: 9 }}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate('Projects')}
-            >
+            <TouchableOpacity onPress={() => navigation.navigate("Projects")}>
               <Text>Projetos</Text>
             </TouchableOpacity>
           </Projects>
