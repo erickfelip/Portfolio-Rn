@@ -1,32 +1,27 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, ScrollView } from "react-native";
+import { Container, CardsProject, Text} from './style'
+import { AntDesign } from '@expo/vector-icons'; 
 
 export default function Projects(props) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Projetos</Text>
-
-      <TouchableOpacity onPress={() => props.navigation.goBack()}>
-        <Text style={styles.link}>Voltar</Text>
+    <Container>
+      <ScrollView>
+      <CardsProject>
+        </CardsProject>
+        <CardsProject>
+        </CardsProject>
+        <CardsProject>
+        </CardsProject>
+        <CardsProject>
+        </CardsProject>
+      <TouchableOpacity 
+      style={{alignItems:"center"}}
+      onPress={() => props.navigation.goBack()}>
+      <AntDesign 
+      name="leftcircleo" size={34} color="white" />  
       </TouchableOpacity>
-    </View>
+        </ScrollView>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  header: {
-    fontSize: 64,
-    color: "#fff",
-    margin: 24
-  },
-  link: {
-    fontSize: 36,
-    color: "#fff",
-    textDecorationLine: "underline"
-  }
-});
