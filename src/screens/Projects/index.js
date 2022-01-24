@@ -8,17 +8,24 @@ import {
   FontAwesome5,
 } from "@expo/vector-icons";
 
-export default function Projects(props) {
+export default function Projects({navigation}) {
   return (
     <Container>
       <ScrollView>
         <CardsProject style={{ shadowColor: "white", elevation: 8 }}>
+          <TouchableOpacity style={{alignItems:"center"}}
+          onPress={() => navigation.navigate("Imc")}>
           <Entypo name="calculator" size={34} color="black" />
           <TextCards> IMC CALCULATOR</TextCards>
+          </TouchableOpacity>
         </CardsProject>
         <CardsProject style={{ shadowColor: "white", elevation: 8 }}>
+          <TouchableOpacity style={{alignItems:'center'}}
+          onPress={() => navigation.navigate("Pokelist")}
+          >
           <MaterialCommunityIcons name="pokeball" size={34} color="black" />
           <TextCards> POKELIST</TextCards>
+          </TouchableOpacity>
         </CardsProject>
         <CardsProject style={{ shadowColor: "white", elevation: 8 }}>
           <FontAwesome5 name="bitcoin" size={34} color="black" />
@@ -30,7 +37,7 @@ export default function Projects(props) {
         </CardsProject>
         <TouchableOpacity
           style={{ alignItems: "center" }}
-          onPress={() => props.navigation.goBack()}
+          onPress={() => navigation.goBack()}
         >
           <AntDesign name="leftcircleo" size={34} color="white" />
         </TouchableOpacity>
