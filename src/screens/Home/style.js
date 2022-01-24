@@ -12,7 +12,7 @@ export const Container = styled.View`
 export const Header = styled(Animated.View)`
   align-items: center;
   justify-content: center;
-  padding-top: ${Platform.OS === "android" ? 60 : 120}px;
+  padding-top: ${Platform.OS === "android" ? 60 : 100}px;
   background-color: ${({ theme }) => theme.colors.default};
   height: ${RFPercentage(300)}px;
   border-radius: 10px;
@@ -77,4 +77,9 @@ export const Cards = styled.View`
 export const Text = styled.Text`
   font-family: ${({ theme }) => theme.fonts.light};
   font-size: 20px;
+`;
+
+export const TextProjects = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.light};
+  font-size: 26px;
 `;

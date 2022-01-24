@@ -9,6 +9,7 @@ import {
   Skills,
   Bio,
   Projects,
+  TextProjects
 } from "./style";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
@@ -90,7 +91,7 @@ export default function Home({ navigation }) {
 
           <Projects style={{ shadowColor: "white", elevation: 9 }}>
             <TouchableOpacity onPress={() => navigation.navigate("Projects")}>
-              <Text>Projetos</Text>
+              <TextProjects>Projetos</TextProjects>
             </TouchableOpacity>
           </Projects>
 

@@ -13,7 +13,6 @@ export function AppRoutes() {
       }}
     >
       <Stack.Screen name="Home" component={Home} />
-      {/*       <Stack.Screen name="Projects" component={Projects} /> */}
       <Stack.Group
         screenOptions={{ presentation: "modal", transparentCard: true }}
       >
