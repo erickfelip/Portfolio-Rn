@@ -17,17 +17,17 @@ export const CardsProject = styled.View`
   height: ${RFValue(80)}px;
   margin-top: ${RFValue(20)}px;
   margin-bottom: ${RFValue(15)}px;
-  border-radius: 20px;
+  border-radius: ${RFValue(20)}px;
 `;
 
 export const Text = styled.Text`
   color: ${({ theme }) => theme.colors.secondary};
   font-family: ${({ theme }) => theme.fonts.light};
-  font-size: 20px;
+  font-size: ${RFValue(20)}px;
 `;
 
 export const TextCards = styled.Text`
   color: ${({ theme }) => theme.colors.black};
   font-family: ${({ theme }) => theme.fonts.light};
-  font-size: 20px;
+  font-size: ${RFValue(20)}px;
 `;

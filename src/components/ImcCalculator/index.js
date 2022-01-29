@@ -17,18 +17,24 @@ export default function Imc({ navigation }) {
           saber se o peso está de acordo com a altura, o que pode interferir
           diretamente na saúde e qualidade de vida da pessoa.
         </TextCards>
-        <TextCards> Repositório
-        </TextCards>
-          <AntDesign 
-          onPress={() => Linking.openURL('https://github.com/erickfelip/calculadora-de-imc-react-native')}
-          name="github" size={50} color="black" />
+        <TextCards> Repositório</TextCards>
+        <AntDesign
+          onPress={() =>
+            Linking.openURL(
+              "https://github.com/erickfelip/calculadora-de-imc-react-native"
+            )
+          }
+          name="github"
+          size={50}
+          color="black"
+        />
       </CardImc>
       <TouchableOpacity
-          style={{ alignItems: "center" }}
-          onPress={() => navigation.goBack()}
-        >
-          <AntDesign name="leftcircleo" size={34} color="white" />
-        </TouchableOpacity>
+        style={{ alignItems: "center" }}
+        onPress={() => navigation.goBack()}
+      >
+        <AntDesign name="leftcircleo" size={34} color="white" />
+      </TouchableOpacity>
     </Container>
   );
 }

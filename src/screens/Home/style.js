@@ -14,16 +14,15 @@ export const Header = styled(Animated.View)`
   justify-content: center;
   padding-top: ${Platform.OS === "android" ? 60 : 100}px;
   background-color: ${({ theme }) => theme.colors.default};
-  height: ${RFPercentage(300)}px;
-  border-radius: 10px;
+  height: ${RFValue(300)}px;
   width: 100%;
 `;
 
 export const Photo = styled(Animated.Image)`
   margin-bottom: ${RFValue(40)}px;
   width: ${RFValue(100)}px;
-  height: ${RFValue(100)}px;
-  border-radius: 90px;
+  height: ${RFValue(120)}px;
+  border-radius: ${RFValue(90)}px;
 `;
 
 export const Bio = styled.View`
@@ -35,7 +34,7 @@ export const Bio = styled.View`
   height: ${RFValue(180)}px;
   margin-top: ${RFValue(20)}px;
   margin-bottom: ${RFValue(15)}px;
-  border-radius: 20px;
+  border-radius: ${RFValue(20)}px;
 `;
 
 export const Skills = styled.View`
@@ -47,7 +46,7 @@ export const Skills = styled.View`
   height: ${RFValue(180)}px;
   margin-top: ${RFValue(20)}px;
   margin-bottom: ${RFValue(15)}px;
-  border-radius: 20px;
+  border-radius: ${RFValue(15)}px;
 `;
 
 export const Projects = styled.View`
@@ -59,7 +58,7 @@ export const Projects = styled.View`
   height: ${RFValue(180)}px;
   margin-top: ${RFValue(20)}px;
   margin-bottom: ${RFValue(15)}px;
-  border-radius: 20px;
+  border-radius: ${RFValue(15)}px;
 `;
 
 export const Cards = styled.View`
@@ -71,15 +70,15 @@ export const Cards = styled.View`
   height: ${RFValue(180)}px;
   margin-top: ${RFValue(20)}px;
   margin-bottom: ${RFValue(15)}px;
-  border-radius: 20px;
+  border-radius: ${RFValue(15)}px;
 `;
 
 export const Text = styled.Text`
   font-family: ${({ theme }) => theme.fonts.light};
-  font-size: 20px;
+  font-size: ${RFValue(18)}px;
 `;
 
 export const TextProjects = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.light};
-  font-size: 26px;
+  font-family: ${({ theme }) => theme.fonts.bold};
+  font-size: ${RFValue(20)}px
 `;

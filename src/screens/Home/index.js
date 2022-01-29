@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, Animated, TouchableOpacity } from "react-native";
 import {
   Header,
@@ -9,9 +10,9 @@ import {
   Skills,
   Bio,
   Projects,
-  TextProjects
+  TextProjects,
 } from "./style";
-import { SafeAreaView } from "react-native-safe-area-context";
+
 import {
   AntDesign,
   FontAwesome,
